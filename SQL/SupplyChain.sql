@@ -67,11 +67,6 @@ END
 ORDER BY Total_Revenue DESC;
 
 
-
-
-
-
-
 /* Query 3: Revenue at Risk by Region
    Which regions have the highest revenue exposed to delivery risk?
 */
@@ -93,7 +88,7 @@ GROUP BY Order_Region
 
 ORDER BY Total_Revenue_At_Risk DESC;
 
-GO
+
 
 
 /* Query 4: Top 5 Most Profitable Categories
@@ -109,7 +104,7 @@ FROM supply_chain_cleaned
 GROUP BY Category_Name
 ORDER BY Total_Profit DESC;
 
-GO
+
 
 
 /* Query 5: Category-wise Delay Rate Analysis
@@ -129,7 +124,7 @@ GROUP BY Category_Name
 HAVING COUNT(*) >= 1000
 ORDER BY Delay_Rate DESC;
 
-GO
+
 
 
 /* Query 6: Revenue per Customer by Region
@@ -159,7 +154,7 @@ HAVING COUNT(DISTINCT Customer_Id) >= 100
 
 ORDER BY Revenue_Per_Customer ASC;
 
-GO
+
 
 
 /* Query 7: Department-wise Sales & Profit Analysis
@@ -181,7 +176,7 @@ GROUP BY Department_Name
 
 ORDER BY Total_Profit DESC;
 
-GO
+
 
 
 /* Query 8: High Revenue but Loss-Making Customers
@@ -207,7 +202,7 @@ HAVING SUM(Order_Profit_Per_Order) < 0
 
 ORDER BY Total_Sales DESC;
 
-GO
+
 
 
 /* Query 9: High-Performing Markets with Delivery Challenges
@@ -234,9 +229,6 @@ GROUP BY Market
 
 ORDER BY Total_Sales DESC;
 
-GO
-
-
 
 
 /* Query 10: Top Revenue Contributing Categories
@@ -262,7 +254,7 @@ GROUP BY Category_Name
 
 ORDER BY Total_Sales DESC;
 
-GO
+
 
 /* Query 11: Order Status Distribution Analysis
    How is revenue distributed across different business order statuses?
@@ -321,7 +313,7 @@ END
 
 ORDER BY Revenue DESC;
 
-GO
+
 
 
 /* Query 12: Fraud Exposure Analysis
@@ -340,7 +332,6 @@ WHERE Order_Status = 'SUSPECTED_FRAUD'
 GROUP BY Type, Market
 ORDER BY Fraud_Exposure_Value DESC;
 
-GO
 
 
 /* Query 13: Revenue Lost Due to Failed Orders
@@ -375,7 +366,7 @@ FROM supply_chain_cleaned
 GROUP BY Category_Name
 ORDER BY Revenue_Loss_Percentage DESC;
 
-GO
+
 
 
 /* Query 14: High-Value At-Risk Customers
@@ -413,10 +404,10 @@ SELECT TOP 20
 FROM Customer_Summary
 ORDER BY Total_Revenue DESC;
 
-GO
 
 
-/* Query 15: Pareto Customer Analysis
+
+/* Query 15:
    How is revenue distributed across customer groups based on the Pareto principle?
 */
 
@@ -470,7 +461,7 @@ ROUND(
 FROM Pareto
 ORDER BY Revenue_Group;
 
-GO
+
 
 
 /* Query 16: Revenue Recovery Opportunity Analysis
@@ -513,7 +504,7 @@ GROUP BY Market
 
 ORDER BY Recoverable_Revenue DESC;
 
-GO
+
 
 
 /* Query 17: Revenue Impact of High-Value Orders
@@ -545,5 +536,5 @@ GROUP BY
         ELSE 'Other Orders'
     END;
 
-GO
+
 
