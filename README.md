@@ -85,12 +85,13 @@ Strategic-Supply-Chain-Analytics/
 
 ## 📊 Dashboard Preview
 
-### 📈 Business Overview
+-  Business Overview
 
-### 🚚 Operational Performance
+-  Operational Performance
 
-### 💡 Strategic Insights
+-  Strategic Insights
 
+---
 
 ## 🔍 Key Business Insights
 
